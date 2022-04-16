@@ -4,13 +4,11 @@
       rel="stylesheet"
       href="//use.fontawesome.com/releases/v6.0.0/css/all.css"
     />
-    <escord-header />
-   
-    <escord-landing />
-    <!--<escord-about />
-     <escord-guide />
-    <escord-contact /> -->
 
+    <escord-header />
+    
+    <gs-main-menu/>
+    <!-- <router-view> </router-view> -->
     <escord-footer />
   </div>
 </template>
@@ -19,20 +17,13 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 
-import Landing from "./components/Landing.vue";
-import About from "./components/About.vue";
-import Guide from "./components/Guide.vue";
-import Contact from "./components/Contact.vue";
+import GradesheetMainMenu from "./components/GradesheetMainMenu.vue";
 
 export default {
   components: {
     "escord-header": Header,
     "escord-footer": Footer,
-
-    "escord-landing": Landing,
-    "escord-about": About,
-    "escord-guide": Guide,
-    "escord-contact": Contact,
+    "gs-main-menu": GradesheetMainMenu,
   },
 
   name: "App",
@@ -57,8 +48,9 @@ div#app {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2d2d2d;
+  max-height: 100vh;
   padding: 0px;
-  margin: 60px 0 0 0;
+  margin: 5em 0 0 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -66,7 +58,8 @@ h1,
 h4.esc-feature-shortdesc,
 h3.esc-feature-longdesctitle,
 p.member-name,
-div#about-escord {
+div#about-escord,
+.tabTitle {
   font-family: "Cuprum", sans-serif;
 }
 h1.landing-page-title {
