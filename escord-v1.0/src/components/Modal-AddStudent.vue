@@ -17,37 +17,27 @@
 
               <div class="stud-id">
                   <label for="studID" class="input__label">Student Number</label>
-                  <input type="text" name="studID" id="studID" class="input__text" required>
+                  <input type="text" name="studID" id="studID" class="input__text" maxlength="8" required>
               </div>
+
+              <div class="stud-name-main">
                   
-             <div class="stud-name">
+             <div class="stud-name _studLN">
                 <label for="studLN" class="input__label">Last Name</label>
-                <input type="text" name="studLN" id="studLN" size="30" class="input__text" required>
+                <input type="text" name="studLN" id="studLN" maxlength="30" class="input__text" required>
              </div>
 
-             <div class="stud-name">
+             <div class="stud-name _studFN">
                 <label for="studFN" class="input__label">First Name</label>
-                <input type="text" name="stuFN" id="studFN" size="30" class="input__text" required>
+                <input type="text" name="stuFN" id="studFN" maxlength="30" class="input__text" required>
              </div>
 
-             <div class="stud-name">
-                <label for="studMN" class="input__label">Middle Name</label>
-                <input type="text" name="studMN" id="studMN" size="30" class="input__text">
+             <div class="stud-name _studMI">
+                <label for="studMI" class="input__label">MI</label>
+                <input type="text" name="studMI" id="studMI" maxlength="4" class="input__text">
              </div>
-                
 
-             <div class="stud-prog">
-                 <label for="studProg" class="input__label">Program</label>
-                 <input type="text" name="studProg" id="studProg" class="input__text" required>
              </div>
-              
-              <div class="stud-yrsec">
-                <label for="studYr" class="input__label">Year</label>
-                <input type="text" name="studYr" id="studYr" size="1" maxlength="1" class="input__text charInp">
-
-                <label for="studSec" class="input__label _sec">Section</label>
-                <input type="text" name="studSec" id="studSec" size="1" maxlength="1" class="input__text charInp">
-             </div>            
 
           </div>
 
@@ -98,30 +88,49 @@ export default {
 </script>
 
 <style scoped>
-
-  .body-content div {
-        margin-top: 1rem;
-    }
   
-  .stud-id, .stud-name, .stud-prog, .stud-yrsec {
+  .stud-id{
       display: flex;
       align-items: center;
-      justify-content: center;
+
+      position: relative;
+      margin-top: 2rem;
+      
+  }
+
+  .stud-name-main {
+      display: flex;
+  }
+
+  .stud-name {
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      margin-top: 2.75rem;
+  }
+
+  ._studLN, ._studFN {
+      flex: 2;
+  }
+
+  ._studMI{
+      flex: 1;
   }
 
   .input__label {
       font-family: "Cuprum",sans-serif;
       text-align: left;
-      font-size: 1.2rem;
+      font-size: 1rem;
       letter-spacing: 0.1rem;
       text-transform: uppercase;
-      width: 10rem;
+      /* width: 10rem; */
       margin: 0 0.5rem;
       flex-shrink: 0;
-  }
 
-  ._sec {
-      width: 5rem;
+      position: absolute;
+      top: -1.5rem;
+      left: 0.5rem;
   }
 
   .input__text {
@@ -129,7 +138,6 @@ export default {
       flex: 1;
       margin: 0 0.5rem;
       width: 0;
-      max-width: 30rem;
       border-bottom: 1px solid #bdbdbd;
       border-radius: 5px;
       padding: 3px 0 3px 10px;
@@ -138,12 +146,13 @@ export default {
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.1rem;
+
+      margin-bottom: 0.25rem;
   }
 
-  .charInp {
-      max-width: 9rem;
-  }
 
+
+/* modal */
 
   .p__text{
     float: left;
@@ -172,9 +181,9 @@ export default {
     display: flex;
     flex-direction: column;
     width: 95%;
-    max-width: 38rem;
+    max-width: 25rem;
     height: 90%;
-    max-height: 31rem;
+    max-height: 23.75rem;
     border-radius: 10px;
   }
 
@@ -196,6 +205,8 @@ export default {
     border-top: 1px solid #cccccc;
     flex-direction: column;
     justify-content: flex-end;
+
+    margin-top: 0.5rem;
   }
 
   .footer-btn{
